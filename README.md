@@ -1,29 +1,39 @@
-# Projeto de Automação Financeira
+# Projeto Laravel Scraping Financeiro
 
 Este é um projeto Laravel para automação financeira, que realiza a captura de dados financeiros da internet, os armazena em um banco de dados PostgreSQL e os exibe em páginas web utilizando o framework Laravel e estilização Bootstrap.
 
-## Configuração do Ambiente
+## Funcionalidades
 
-1. **Instalação do Laravel**: 
-   - Para iniciar, é necessário ter o Laravel instalado. Se ainda não o tiver, você pode seguir as instruções de instalação na [documentação oficial do Laravel](https://laravel.com/docs).
+- Coleta automática de dados financeiros de fontes online com Python.
+- Exibição dos dados financeiros em uma interface web Laravel Blade.
+- Agendamento de coleta de dados para execução periódica Laravel Jobs.
 
-2. **Configuração do Banco de Dados**:
-   - Certifique-se de ter o PostgreSQL instalado e configurado na sua máquina.
-   - No arquivo `.env`, configure as informações do banco de dados, como nome do banco, usuário e senha.
+## Requisitos
 
-## Passo a Passo
+- PHP >= 7.4
+- Laravel
+- Composer
+- Python >= 3.9
+- PostgreSQL
 
-### 1. Criação do Banco de Dados e Tabelas
+### Instalação
 
-- [x] Criação do banco de dados PostgreSQL `dados_financeiros`.
-- [x] Criação da tabela `indicadores_financeiros` com colunas `nome`, `valor`, `data` e `created_at`.
-- [x] Criação da tabela `bolsa` com colunas `nome`, `valor`, `variacao`, `data` e `created_at`.
-- [x] Criação da tabela `moedas` com colunas `nome`, `valor`, `variacao`, `data` e `created_at`.
+1. Clone este repositório para o seu ambiente local.
+2. Execute `composer install` para instalar as dependências do PHP.
+3. Execute `pip install -r requirements.txt` para instalar as dependencias do Python.
+4. Configure as credenciais do banco de dados no arquivo `.env`.
+5. Execute `php artisan key:generate` para gerar a chave de aplicativo.
+6. Execute `php artisan migrate` para criar as tabelas do banco de dados.
+7. Execute `php artisan serve` para iniciar o servidor de desenvolvimento.
 
-### 2. Implementação da Captura de Dados
+### Configuração do Banco de Dados PostgreSQL
 
-- [ ] Implementação de Jobs em Python para capturar dados financeiros da internet.
-- [ ] Integração dos Jobs Python ao Laravel para armazenar os dados no banco de dados PostgreSQL.
+Certifique-se de que as extensões necessárias para o PostgreSQL estejam habilitadas no PHP. Verifique o arquivo `xampp/php/php.ini` ou `php.ini` do seu ambiente para garantir que as seguintes linhas estejam sem comentários:
+
+```ini
+extension=pdo_pgsql
+extension=pgsql
+```
 
 ## Licença
 
