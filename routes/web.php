@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BolsaController;
+use App\Http\Controllers\IndicadorFinanceiroController;
+use App\Http\Controllers\MoedaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/bolsa', [BolsaController::class, 'index']);
+Route::get('/indicadores-financeiros', [IndicadorFinanceiroController::class, 'index']);
+Route::get('/moedas', [MoedaController::class, 'index']);
